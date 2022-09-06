@@ -1,0 +1,27 @@
+.authbox {
+  width: 50%;
+  height: 100%;
+}
+.welcome_text {
+  text-align: left;
+}
+
+form input {
+  width: 70%;
+  height: 2rem;
+  outline: none;
+  margin: auto;
+  /* border-radius: 4px; */
+  border: none;
+  margin: 5px;
+  border-bottom: 1px solid black;
+}
+
+form h3 {
+  font-size: 1.5rem;
+}
+
+.submit {
+  border-radius: 8px;
+  margin-top: 10px;
+}
