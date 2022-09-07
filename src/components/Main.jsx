@@ -3,6 +3,7 @@ import { fabric } from "fabric";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./Main.css";
+import Nav from "./Navigation/Nav";
 const Main = memo(() => {
   const [canvas, setcanvas] = useState("");
   const [draw, setdraw] = useState(false);
@@ -66,18 +67,22 @@ const Main = memo(() => {
   }, []);
 
   return (
-    <div className="mainbox">
-      <div className="btn_box">
-        <button onClick={() => addRect(canvas)}>Rectangle</button>
-        <button onClick={() => addCir(canvas)}>Circle</button>
-        <button onClick={() => addtri(canvas)}>Triangle</button>
-        <button onClick={() => Clear(canvas)}>Clear</button>
-        <button id="drawingMode" onClick={() => drawing(canvas)}>
-          {draw ? "Draw Mode on" : "Draw Mode off"}
-        </button>
+    <>
+      <Nav />
+
+      <div className="mainbox">
+        <div className="btn_box">
+          <button onClick={() => addRect(canvas)}>Rectangle</button>
+          <button onClick={() => addCir(canvas)}>Circle</button>
+          <button onClick={() => addtri(canvas)}>Triangle</button>
+          <button onClick={() => Clear(canvas)}>Clear</button>
+          <button id="drawingMode" onClick={() => drawing(canvas)}>
+            {draw ? "Draw Mode on" : "Draw Mode off"}
+          </button>
+        </div>
+        <canvas id="canvas" />
       </div>
-      <canvas id="canvas" />
-    </div>
+    </>
   );
 });
 
